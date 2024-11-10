@@ -13,6 +13,8 @@ export const App = () => {
         }, 3000);
     }, []);
 
+    const base_url = import.meta.env.BASE_URL.replace(/\/$/, '');
+
     return (
         <>
             <div className={"flex-col space-y-10"}>
@@ -25,7 +27,7 @@ export const App = () => {
                                 <div>
                                     <img
                                         alt=""
-                                        src="/results/fudd.png"
+                                        src={`${base_url}/fudd.png`}
                                         className="inline-block h-20 w-20 rounded-full"
                                     />
                                 </div>
@@ -43,7 +45,7 @@ export const App = () => {
                                 <div>
                                     <img
                                         alt=""
-                                        src="/results/bugs.jpg"
+                                        src={`${base_url}/bugs.jpg`}
                                         className="inline-block h-20 w-20 rounded-full"
                                     />
                                 </div>
