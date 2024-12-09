@@ -7,7 +7,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      VITE_SERVER_URL: http://staging.quickube.sh
+      VITE_SERVER_URL: https://voting.localhost.kblocks.io
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
           \          # Upload HTML files with no caching
 
           \          aws s3 sync dist
-          s3://bucket-c8437152-20241202230643356800000001 \\
+          s3://bucket-c805b977-20241209144548968900000001 \\
 
           \            --exclude \"*\" \\
 
@@ -76,7 +76,7 @@ jobs:
           \          # Upload assets with long-term caching
 
           \          aws s3 sync dist
-          s3://bucket-c8437152-20241202230643356800000001 \\
+          s3://bucket-c805b977-20241209144548968900000001 \\
 
           \            --exclude \"*.html\" \\
 
@@ -106,7 +106,7 @@ jobs:
           \          # Upload remaining files with moderate caching
 
           \          aws s3 sync dist
-          s3://bucket-c8437152-20241202230643356800000001 \\
+          s3://bucket-c805b977-20241209144548968900000001 \\
 
           \            --exclude \"*.html\" \\
 
@@ -136,11 +136,11 @@ jobs:
       - name: Invalidate CloudFront cache
         run: "
 
-          \          if [ -n E2R3Q24U21EEPH ]; then
+          \          if [ -n E4T7IRSJYZZLC ]; then
 
           \            aws cloudfront create-invalidation \\
 
-          \              --distribution-id E2R3Q24U21EEPH \\
+          \              --distribution-id E4T7IRSJYZZLC \\
 
           \              --paths \"/*\"
 
