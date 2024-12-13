@@ -62,7 +62,7 @@ jobs:
           \          # Upload HTML files with no caching
 
           \          aws s3 sync dist
-          s3://bucket-c805b977-20241211145549471600000001 \\
+          s3://bucket-c805b977-20241213101543136400000001 \\
 
           \            --exclude \"*\" \\
 
@@ -76,7 +76,7 @@ jobs:
           \          # Upload assets with long-term caching
 
           \          aws s3 sync dist
-          s3://bucket-c805b977-20241211145549471600000001 \\
+          s3://bucket-c805b977-20241213101543136400000001 \\
 
           \            --exclude \"*.html\" \\
 
@@ -106,7 +106,7 @@ jobs:
           \          # Upload remaining files with moderate caching
 
           \          aws s3 sync dist
-          s3://bucket-c805b977-20241211145549471600000001 \\
+          s3://bucket-c805b977-20241213101543136400000001 \\
 
           \            --exclude \"*.html\" \\
 
@@ -136,11 +136,11 @@ jobs:
       - name: Invalidate CloudFront cache
         run: "
 
-          \          if [ -n EWIXLQ3CP5MTZ ]; then
+          \          if [ -n E1X025IXZUT9YL ]; then
 
           \            aws cloudfront create-invalidation \\
 
-          \              --distribution-id EWIXLQ3CP5MTZ \\
+          \              --distribution-id E1X025IXZUT9YL \\
 
           \              --paths \"/*\"
 
